@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="AddressBookControllerTest" project="Uebung2" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="exercise2.test.AddressBookControllerTest" time="0.001">
+    <testcase name="testAddTelephone1" classname="exercise2.test.AddressBookControllerTest" time="0.001"/>
+    <testcase name="testAddTelephone2" classname="exercise2.test.AddressBookControllerTest" time="0.0"/>
+    <testcase name="testAddGender" classname="exercise2.test.AddressBookControllerTest" time="0.0"/>
+    <testcase name="testAddFirstName" classname="exercise2.test.AddressBookControllerTest" time="0.0"/>
+    <testcase name="testAddLastName" classname="exercise2.test.AddressBookControllerTest" time="0.0"/>
+    <testcase name="testAddNames" classname="exercise2.test.AddressBookControllerTest" time="0.0"/>
+  </testsuite>
+</testrun>

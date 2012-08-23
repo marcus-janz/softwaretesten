@@ -66,7 +66,7 @@ public class AddressBookControllerTest {
 		} catch (ParameterException e) {
 			// expected, Only one sort of contact information can be set at one time
 		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException.");
+			fail("Controller should throw a ParameterException. ");
 		}
 	}
 		
@@ -74,59 +74,25 @@ public class AddressBookControllerTest {
 	public void testAddTelephone2(){
 		try {
 			controller.add("firstName", "lastName", "M", "abcde", null);
-			fail("Controller should throw a ParameterException.");
+			fail("Controller should throw a NumberFormatException. ");
 		} catch (ParameterException e) {
-			//expected, OK
+			fail("Controller should throw a NumberFormatException. ");
 		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException.");
-		}	
+			fail("Controller should throw a NumberFormatException. ");
+		} catch (NumberFormatException e){
+			// expected, abcde is not a telephone number
+		}
 	}
 	
 	@Test
 	public void testAddGender(){
 		try {
-			controller.add("firstName", "lastName", "X", "12345", null);
-			fail("Controller should throw a Parameter exception.");
-		} catch (ParameterException e) {
-			// expected, only M or F is a valid gender
-		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException.");			
-		}
-	}
-	
-	@Test
-	public void testAddFirstName(){
-		try {
-			controller.add(null, "lastName", "M", "12345", null);
-			fail("Controller should throw a Parameter exception.");
-		} catch (ParameterException e) {
-			// expected, only M or F is a valid gender
-		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException.");			
-		}
-	}
-	
-	@Test
-	public void testAddLastName(){
-		try {
-			controller.add("firstName", null, "M", "12345", null);
+			controller.add("firstName", "lastName", "X", "eContactInformation", "emailContactInformation");
 			fail("Controller should throw a Parameter exception. ");
 		} catch (ParameterException e) {
 			// expected, only M or F is a valid gender
 		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException.");			
-		}
-	}
-	
-	@Test
-	public void testAddNames(){
-		try {
-			controller.add(null, null, "M", "12345", null);
-			fail("Controller should throw a Parameter exception. ");
-		} catch (ParameterException e) {
-			// expected, only M or F is a valid gender
-		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException.");			
+			fail("Controller should throw a ParameterException. ");			
 		}
 	}
 }

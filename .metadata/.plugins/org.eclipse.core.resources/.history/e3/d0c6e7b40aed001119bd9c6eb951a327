@@ -86,7 +86,7 @@ public class AddressBookControllerTest {
 	public void testAddGender(){
 		try {
 			controller.add("firstName", "lastName", "X", "12345", null);
-			fail("Controller should throw a Parameter exception.");
+			fail("Controller should throw a Parameter exception. ");
 		} catch (ParameterException e) {
 			// expected, only M or F is a valid gender
 		} catch (SizeLimitReachedException e) {
@@ -98,7 +98,7 @@ public class AddressBookControllerTest {
 	public void testAddFirstName(){
 		try {
 			controller.add(null, "lastName", "M", "12345", null);
-			fail("Controller should throw a Parameter exception.");
+			fail("Controller should throw a Parameter exception. ");
 		} catch (ParameterException e) {
 			// expected, only M or F is a valid gender
 		} catch (SizeLimitReachedException e) {
