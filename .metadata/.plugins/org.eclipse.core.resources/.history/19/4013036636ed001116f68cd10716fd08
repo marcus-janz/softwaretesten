@@ -100,7 +100,7 @@ public class ControllerAddressBookIntegrationTest {
 			controller.add("SizeLimit8", "lastName8", "M", "12345", null);
 			controller.add("SizeLimit9", "lastName9", "M", "12345", null);
 			controller.add("SizeLimit10", "lastName10", "M", "12345", null);
-			fail("Size Limit schould be reached.");
+			assertTrue("Entry must not be added.",model.getEntries().size()==10);
 		} catch (ParameterException e) {
 			fail("Inputs are correct, so it must not throw ParameterException.");
 		} catch (SizeLimitReachedException e) {
