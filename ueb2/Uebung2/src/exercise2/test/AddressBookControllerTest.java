@@ -5,10 +5,15 @@
  */
 package exercise2.test;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
+import org.junit.Test;
 
 import exercise2.addressbook.controller.AddressBookController;
 import exercise2.addressbook.controller.AddressBookControllerImpl;
+import exercise2.addressbook.controller.ParameterException;
+import exercise2.addressbook.model.SizeLimitReachedException;
 
 
 /**
@@ -53,4 +58,41 @@ public class AddressBookControllerTest {
 	
 	// TODO: Hier die Testfälle für den Komponententest hinschreiben
 	
+	@Test
+	public void testAddTelephone1(){
+		try {
+			controller.add("firstName", "lastName", "M", "df", "test");
+			assertTrue("Controller should throw a Parameter exception. ",false);	
+		} catch (ParameterException e) {
+			// expected, Only one sort of contact information can be set at one time
+		} catch (SizeLimitReachedException e) {
+			assertTrue("Controller should throw a ParameterException. ",false);
+		}
+	}
+		
+	@Test
+	public void testAddTelephone2(){
+		try {
+			controller.add("firstName", "lastName", "M", "abcde", null);
+			assertTrue("Controller should throw a NumberFormatException. ",false);
+		} catch (ParameterException e) {
+			assertTrue("Controller should throw a NumberFormatException. ",false);
+		} catch (SizeLimitReachedException e) {
+			assertTrue("Controller should throw a NumberFormatException. ",false);
+		} catch (NumberFormatException e){
+			// expected, abcde is not a telephone number
+		}
+	}
+	
+	@Test
+	public void testAddGender(){
+		try {
+			controller.add("firstName", "lastName", "X", "eContactInformation", "emailContactInformation");
+			assertTrue("Controller should throw a Parameter exception. ",false);
+		} catch (ParameterException e) {
+			// expected, only M or F is a valid gender
+		} catch (SizeLimitReachedException e) {
+			assertTrue("Controller should throw a ParameterException. ",false);			
+		}
+	}
 }

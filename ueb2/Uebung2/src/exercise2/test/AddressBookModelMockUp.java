@@ -21,9 +21,54 @@ import exercise2.addressbook.model.SizeLimitReachedException;
  * 
  * Bitte Gruppenmitglieder eintragen:
  * @author Edzard Hoefig
- * @author ...
+ * @author René Perschon
+ * @author Martin Schulze
+ * @author Anselm Brachmann
+ * @author Marcus Janz
  */
 public class AddressBookModelMockUp implements AddressBookModel {
+
+	@Override
+	public boolean addEntry(Entry entry) throws SizeLimitReachedException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Entry getEntry(String surName, String firstName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Entry> getEntries() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteEntry(Entry entry) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void erase() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void load() throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void save() throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
 
 	// TODO: Mock-Up erstellen
 	

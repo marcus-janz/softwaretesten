@@ -18,9 +18,24 @@ import exercise2.addressbook.view.AddressBookView;
  * 
  * Bitte Gruppenmitglieder eintragen:
  * @author Edzard Hoefig
- * @author ...
+ * @author René Perschon
+ * @author Martin Schulze
+ * @author Anselm Brachmann
+ * @author Marcus Janz
  */
 public class AddressBookViewMockUp implements AddressBookView {
+
+	@Override
+	public void create(AddressBookAccess model, AddressBookController controller) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void refresh() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	// TODO: Mock-Up erstellen
 	
