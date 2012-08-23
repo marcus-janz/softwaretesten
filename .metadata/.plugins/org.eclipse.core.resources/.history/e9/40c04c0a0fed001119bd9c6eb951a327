@@ -65,10 +65,11 @@ public class AddressBookControllerTest {
 			controller.add("firstName", "lastName", "M", "12345", null);
 			assertTrue("Model has to get an Add-Method invocation.",model.getGotAnAdd());
 			Entry e=model.getLastEntryToAdd();
-			assertTrue("Added Entry has not the same firstname.",e.getFirstName().equals("firstName"));
-			assertTrue("Added Entry has not the same lastname.",e.getSurName().equals("lastName"));
-			assertTrue("Added Entry has not the same gender.",e.isMale());
-			assertTrue("Added Entry has not the same contactInfo.",e.getContactInformation().toString().equals("12345"));
+			assertTrue("Added Entry is not the same.",e.getFirstName().equals("firstName"));
+			assertTrue("Added Entry is not the same.",e.getSurName().equals("lastName"));
+			assertTrue("Added Entry is not the same.",e.isMale());
+			System.out.println();
+			assertTrue("Added Entry is not the same.",e.getContactInformation().equals("12345"));
 		} catch (ParameterException e) {
 			fail("Inputs are correct, so it must not throw ParameterException.");
 		} catch (SizeLimitReachedException e) {

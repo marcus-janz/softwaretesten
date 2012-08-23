@@ -28,26 +28,9 @@ import exercise2.addressbook.model.SizeLimitReachedException;
  */
 public class AddressBookModelMockUp implements AddressBookModel {
 
-	boolean gotAnAdd=false;
-	Entry lastEntryToAdd;
-	
-	
-	public boolean getGotAnAdd(){
-		boolean tmp=gotAnAdd;
-		gotAnAdd=false;
-		return tmp;
-	}
-	
-	public Entry getLastEntryToAdd(){
-		return lastEntryToAdd;
-	}
-	
 	@Override
 	public boolean addEntry(Entry entry) throws SizeLimitReachedException {
-		if(entry.getFirstName().equals("SizeLimit"))
-			throw new SizeLimitReachedException("For purpose triggered Exception from MockUp.");
-		gotAnAdd=true;
-		lastEntryToAdd=entry;
+		// TODO Auto-generated method stub
 		return false;
 	}
 

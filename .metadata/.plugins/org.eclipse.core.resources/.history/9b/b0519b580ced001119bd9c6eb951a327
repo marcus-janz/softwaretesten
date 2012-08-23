@@ -13,7 +13,6 @@ import org.junit.Test;
 import exercise2.addressbook.controller.AddressBookController;
 import exercise2.addressbook.controller.AddressBookControllerImpl;
 import exercise2.addressbook.controller.ParameterException;
-import exercise2.addressbook.model.Entry;
 import exercise2.addressbook.model.SizeLimitReachedException;
 
 
@@ -62,29 +61,13 @@ public class AddressBookControllerTest {
 	@Test
 	public void testAddFunctional(){
 		try {
-			controller.add("firstName", "lastName", "M", "12345", null);
-			assertTrue("Model has to get an Add-Method invocation.",model.getGotAnAdd());
-			Entry e=model.getLastEntryToAdd();
-			assertTrue("Added Entry has not the same firstname.",e.getFirstName().equals("firstName"));
-			assertTrue("Added Entry has not the same lastname.",e.getSurName().equals("lastName"));
-			assertTrue("Added Entry has not the same gender.",e.isMale());
-			assertTrue("Added Entry has not the same contactInfo.",e.getContactInformation().toString().equals("12345"));
+			controller.add("firstName", "lastName", "M", "df", "test");
+			fail("Controller should throw a Parameter exception.");	
 		} catch (ParameterException e) {
-			fail("Inputs are correct, so it must not throw ParameterException.");
+			// expected, Only one sort of contact information can be set at one time
+			assertFalse("Add-Method of Model must not be invoked!",model.gotAnAdd);
 		} catch (SizeLimitReachedException e) {
-			fail("SizeLimit can't be reached.");
-		}
-	}
-	
-	@Test
-	public void testAddSizeLimit(){
-		try {
-			controller.add("SizeLimit", "lastName", "M", "12345", null);
-			fail("Size Limit schould be reached.");
-		} catch (ParameterException e) {
-			fail("Inputs are correct, so it must not throw ParameterException.");
-		} catch (SizeLimitReachedException e) {
-			//expected, OK
+			fail("Controller should throw a ParameterException.");
 		}
 	}
 	
@@ -95,7 +78,7 @@ public class AddressBookControllerTest {
 			fail("Controller should throw a Parameter exception.");	
 		} catch (ParameterException e) {
 			// expected, Only one sort of contact information can be set at one time
-			assertFalse("Add-Method of Model must not be invoked.",model.gotAnAdd);
+			assertFalse("Add-Method of Model must not be invoked!",model.gotAnAdd);
 		} catch (SizeLimitReachedException e) {
 			fail("Controller should throw a ParameterException.");
 		}

@@ -8,6 +8,8 @@ package exercise2.test;
 import java.io.IOException;
 import java.util.Collection;
 
+import javax.naming.SizeLimitExceededException;
+
 import exercise2.addressbook.model.AddressBookModel;
 import exercise2.addressbook.model.Entry;
 import exercise2.addressbook.model.SizeLimitReachedException;
