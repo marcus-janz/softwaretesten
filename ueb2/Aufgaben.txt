@@ -25,7 +25,7 @@ Qualitätssicherung ist schwierig weil:
 Aufgabe 2
 ---------
 
-Äußeres Merkmal Benutzbarkeit und inneres Merkmal Übetragbarkeit
+Äußeres Merkmal Benutzbarkeit und inneres Merkmal Übertragbarkeit
 
 Innere Qualität einer Software bezieht sich auf den Code, dieser sollte beispielsweise leicht änderbar oder anpassbar sein und somit ermöglichen, sie Software für verschiedene Systeme verfügbar zu machen. Äußere Qualität ist, was der Benutzer letzten Endes sieht: Er will, dass die Software zuverlässig und leicht zu benutzen ist.
 Nehmen wir das Beispiel, dass eine Software für MacOS, also ein Unix-System auf ein Windows-System portiert werden soll. Ist der Code gut durchdacht, sieht er für diesen Fall evtl vor, dass an einer zentralen Stelle die Verwendung von Pfaden organisiert ist. Während Windows einen Backslash ('\') benutzt, ist auf Unix-Systemen der normale Slash ('/') in der Verwendung. Im schlechten Fall muss das in jeder Datei des Sourcecodes einzeln ersetzt werden - ein beispiel für mangelhafte innere Qualität.
