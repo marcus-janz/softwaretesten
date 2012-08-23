@@ -17,10 +17,9 @@ import exercise2.addressbook.model.SizeLimitReachedException;
  * Mock-Up für das AddressBookModel
  * 
  * Bitte Nummer der Gruppe eintragen:
- * 0
+ * 10
  * 
  * Bitte Gruppenmitglieder eintragen:
- * @author Edzard Hoefig
  * @author René Perschon
  * @author Martin Schulze
  * @author Anselm Brachmann
