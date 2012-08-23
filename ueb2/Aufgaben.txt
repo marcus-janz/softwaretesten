@@ -23,7 +23,7 @@ Qualitätssicherung ist schwierig weil:
 
 
 Aufgabe 2
----------.
+---------
 
 Äußeres Merkmal Benutzbarkeit und inneres Merkmal Übetragbarkeit
 
