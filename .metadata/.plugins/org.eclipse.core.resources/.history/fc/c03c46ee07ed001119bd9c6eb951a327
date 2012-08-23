@@ -5,7 +5,7 @@
  */
 package exercise2.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -62,11 +62,11 @@ public class AddressBookControllerTest {
 	public void testAddTelephone1(){
 		try {
 			controller.add("firstName", "lastName", "M", "df", "test");
-			fail("Controller should throw a Parameter exception.");	
+			assertTrue("Controller should throw a Parameter exception. ",false);	
 		} catch (ParameterException e) {
 			// expected, Only one sort of contact information can be set at one time
 		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException. ");
+			assertTrue("Controller should throw a ParameterException. ",false);
 		}
 	}
 		
@@ -74,11 +74,11 @@ public class AddressBookControllerTest {
 	public void testAddTelephone2(){
 		try {
 			controller.add("firstName", "lastName", "M", "abcde", null);
-			fail("Controller should throw a NumberFormatException. ");
+			assertTrue("Controller should throw a NumberFormatException. ",false);
 		} catch (ParameterException e) {
-			fail("Controller should throw a NumberFormatException. ");
+			assertTrue("Controller should throw a NumberFormatException. ",false);
 		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a NumberFormatException. ");
+			assertTrue("Controller should throw a NumberFormatException. ",false);
 		} catch (NumberFormatException e){
 			// expected, abcde is not a telephone number
 		}
@@ -88,11 +88,11 @@ public class AddressBookControllerTest {
 	public void testAddGender(){
 		try {
 			controller.add("firstName", "lastName", "X", "eContactInformation", "emailContactInformation");
-			fail("Controller should throw a Parameter exception. ");
+			assertTrue("Controller should throw a Parameter exception. ",false);
 		} catch (ParameterException e) {
 			// expected, only M or F is a valid gender
 		} catch (SizeLimitReachedException e) {
-			fail("Controller should throw a ParameterException. ");			
+			assertTrue("Controller should throw a ParameterException. ",false);			
 		}
 	}
 }
