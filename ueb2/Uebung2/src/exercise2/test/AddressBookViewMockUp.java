@@ -14,10 +14,9 @@ import exercise2.addressbook.view.AddressBookView;
  * Mock-Up für den AddressBookView
  * 
  * Bitte Nummer der Gruppe eintragen:
- * 0
+ * 10
  * 
  * Bitte Gruppenmitglieder eintragen:
- * @author Edzard Hoefig
  * @author René Perschon
  * @author Martin Schulze
  * @author Anselm Brachmann

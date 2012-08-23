@@ -21,11 +21,13 @@ import exercise2.addressbook.model.SizeLimitReachedException;
  * Komponententests für den Controller
  * 
  * Bitte Nummer der Gruppe eintragen:
- * 0
+ * 10
  * 
  * Bitte Gruppenmitglieder eintragen:
- * @author Edzard Hoefig
- * @author ...
+ * @author René Perschon
+ * @author Martin Schulze
+ * @author Anselm Brachmann
+ * @author Marcus Janz
  */
 public class AddressBookControllerTest {
 	
