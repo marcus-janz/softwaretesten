@@ -58,7 +58,7 @@
           <tags>persp.showIn:org.eclipse.ui.views.ResourceNavigator</tags>
           <tags>persp.showIn:org.eclipse.ui.navigator.ProjectExplorer</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_LHdXUe0vEeG0LbqgvHYwFQ" selectedElement="_LHdXWO0vEeG0LbqgvHYwFQ" horizontal="true">
-            <children xsi:type="basic:PartStack" xmi:id="_LHdXUu0vEeG0LbqgvHYwFQ" elementId="left" containerData="2922" selectedElement="_LHdXV-0vEeG0LbqgvHYwFQ">
+            <children xsi:type="basic:PartStack" xmi:id="_LHdXUu0vEeG0LbqgvHYwFQ" elementId="left" containerData="2922" selectedElement="_LHdXU-0vEeG0LbqgvHYwFQ">
               <tags>newtablook</tags>
               <tags>org.eclipse.e4.primaryNavigationStack</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_LHdXU-0vEeG0LbqgvHYwFQ" elementId="org.eclipse.jdt.ui.PackageExplorer" ref="_LHBScO0vEeG0LbqgvHYwFQ"/>
@@ -67,7 +67,7 @@
               <children xsi:type="advanced:Placeholder" xmi:id="_LHdXVu0vEeG0LbqgvHYwFQ" elementId="org.eclipse.ui.navigator.ProjectExplorer" toBeRendered="false" ref="_LHM4oO0vEeG0LbqgvHYwFQ"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_LHdXV-0vEeG0LbqgvHYwFQ" elementId="org.eclipse.jdt.junit.ResultView" ref="_LHcwQO0vEeG0LbqgvHYwFQ"/>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_LHdXWO0vEeG0LbqgvHYwFQ" containerData="7078" selectedElement="_LHd-Y-0vEeG0LbqgvHYwFQ">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_LHdXWO0vEeG0LbqgvHYwFQ" containerData="7078" selectedElement="_LHdXWe0vEeG0LbqgvHYwFQ">
               <children xsi:type="basic:PartSashContainer" xmi:id="_LHdXWe0vEeG0LbqgvHYwFQ" containerData="7500" selectedElement="_LHdXWu0vEeG0LbqgvHYwFQ" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_LHdXWu0vEeG0LbqgvHYwFQ" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_LGTgwO0vEeG0LbqgvHYwFQ"/>
                 <children xsi:type="basic:PartStack" xmi:id="_LHdXW-0vEeG0LbqgvHYwFQ" elementId="right" containerData="2500" selectedElement="_LHd-YO0vEeG0LbqgvHYwFQ">
@@ -203,7 +203,7 @@
       <tags>View</tags>
       <tags>categoryTag:Ant</tags>
     </sharedElements>
-    <sharedElements xsi:type="basic:Part" xmi:id="_LHcwQO0vEeG0LbqgvHYwFQ" elementId="org.eclipse.jdt.junit.ResultView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="JUnit" iconURI="platform:/plugin/org.eclipse.jdt.junit//icons/full/eview16/junit.gif" tooltip="AllTests [Runner: JUnit 4]" closeable="true">
+    <sharedElements xsi:type="basic:Part" xmi:id="_LHcwQO0vEeG0LbqgvHYwFQ" elementId="org.eclipse.jdt.junit.ResultView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="JUnit" iconURI="platform:/plugin/org.eclipse.jdt.junit//icons/full/eview16/junit.gif" tooltip="" closeable="true">
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view failuresOnly=&quot;false&quot; layout=&quot;1&quot; orientation=&quot;2&quot; ratio=&quot;500&quot; scroll=&quot;false&quot; time=&quot;true&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:Java</tags>
