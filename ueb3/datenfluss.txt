@@ -1,7 +1,7 @@
 public static final int NOTFOUND = -1; 			// d(NOTFOUND)// Binaere Suche auf Array a.// Annahme: a ist sortiert// Ergebnis: NOTFOUND, wenn k nicht in A enthalten ist. 
-// Ergebnis: i falls a[i] gleich k ist.public static int binSearch(int[] a, int k) { 		// d(a,k)  int ug = 0, og = a.length-1, m, pos = NOTFOUND;	// d(ug,og,pos); u(m); r(NOTFOUND,a)  while (ug <= og && pos == NOTFOUND) {			// r(ug,go,pos,NOTFOUND)    m = (ug + og) / 2;					// d(m); r(ug,og)    if (a[m] == k)					// r(a,k)	pos=m; 						// d(pos); r(m)
-    else					      if (a[m] <k) 					// r(a,k)
+// Ergebnis: i falls a[i] gleich k ist.public static int binSearch(int[] a, int k) { 		// d(a,k) -> du(k)  int ug = 0, og = a.length-1, m, pos = NOTFOUND;	// d(ug,og,pos); u(m); r(NOTFOUND,a)  while (ug <= og && pos == NOTFOUND) {			// r(ug,go,pos,NOTFOUND)    m = (ug + og) / 2;					// d(m); r(ug,og)    if (a[m] == k)					// r(a,k,m)	pos=m; 						// d(pos); r(m)
+    else					      if (a[m] <k) 					// r(a,k,m)
 	ug=m +1;					// d(ug); r(m)      else	og=m -1;					// d(og); r(m)  }return pos; 						// r(pos)
 }
 
-Keine Datenflussanomalien zu finden.
+du(k): wenn die while-bedigung beim ersten mal false ist, dann wird k definiert, aber nicht benutzt und daher wieder u
