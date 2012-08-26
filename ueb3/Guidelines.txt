@@ -1,0 +1,11 @@
+1.
+Das haben wir umgesetzt. Schließlich war es auch nur die Aufgabe eine Methode der einen Klasse zu testen.
+Auf jeden Fall ist diese Richtlinie sinnvoll, um so die Übersichtlichkeit zu waren. IM Prinzip könnte man hier die gleichen Argumente bringen, warum man verschiedene Klassen nutzt um etwas zu programmieren.
+
+2.
+Wir haben unsere Testfälle immer so benannt, dass aus ihnen klar wird, was dieser Testen soll. So sieht man an dem Namen "testAddGender", dass dieser Testfall testet, wie der Controller auf einen ungültigen Gender Eintrag reagiert.
+Auch dies ist sinnvoll, da man so sofort sieht, was nach den Tests zu funktionieren scheint und wo es Fehler gibt. Sonst müsste man immer erst in jede Methode oder Doku reinschauen, was dieser Testfall eigentlich testet.
+
+3.
+Wir haben soweit wir das beurteilen können auch die "trivialen" Testfälle getestet. Zumindest haben wir keine Testfälle weggelassen, die uns eingefallen sind und erst recht nicht mit der Begründung von Trivialität. Wenn noch "triviale" Testfälle fehlen, dann nur weil sie uns nicht eingefallen sind.
+Auch dies ist durchaus sinnvoll, da gerade bei vermeintlich einfachen Sachen oft Flüchtigkeitsfehler gemacht werden, Des Weiteren sind solche Testfälle schnell geschrieben und bereiten wenig Aufwand. Andererseits werden getter und setter oft automatisch generiert, wodurch ein Fehler eher selten vorkommen wird.
