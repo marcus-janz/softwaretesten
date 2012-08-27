@@ -1,0 +1,14 @@
+Aufgabe 1 - Pfadüberdeckung.
+Im Übungsblatt PathCoverage.pdf wird die Implementierung einer Methode suche(zeichen, alphabet) vorgegeben.
+a) Bestimmen Sie konkrete Testfälle zur vollständigen Anweisungsüberdeckung und erläutern Sie, warum eine vollständige Anweisungsüberdeckung erreicht wird.
+b) Bestimmen Sie konkrete Testfälle zur vollständigen Zweigüberdeckung und erläutern Sie, warum eine vollständige Zweigüberdeckung erreicht wird.
+c) Bestimmen Sie alle du-Ketten.
+d) Bestimmen Sie konkrete Testfälle, so dass jede du-Kette mindestens einmal durchlaufen wird („du-Ketten-Überdeckung“) und erläutern Sie, warum eine vollständige du-Ketten-Überdeckung erreicht wird.
+Aufgabe 2 - Bedingungsüberdeckung.
+Benutzen Sie JUnit zum Entwerfen und Durchführen von Testfällen für die Methode filter(…) der Klasse AddressBookFilter. Es sind drei Filterbedingungen (nicht notwendigerweise korrekt) implementiert.
+a) Filter MALE_ADULTS_PHONE
+Der Filter wählt alle Einträge aus, die einen Mann repräsentieren, der 18 Jahre oder älter ist und eine Telefonnummer zugewiesen hat. Verwenden Sie die Strategie der Mehrfachbedingungsüberdeckung.
+b) Filter FEMALE_DUCK_OR_MAUS_OVER_30
+Der Filter wählt die Einträge aller Frauen aus, deren Nachname entweder "Duck" oder "Maus" ist und die über 30 Jahre alt sind. Verwenden Sie die Strategie der minimal bestimmenden Mehrfachbedingungsüberdeckung.
+c) Filter FEMALE_OR_MALE_KIDS_AND_SENIORS_WITH_D
+Der Filter wählt alle Einträge aus, deren Nachnamen mit "D" beginnt und die entweder weiblich oder männlich und zudem außerhalb der Altersgruppe 18-65 (also jünger als 18 Jahre bzw. älter als 65 Jahre). Verwenden Sie die Strategie der einfachen Bedingungsüberdeckung.
