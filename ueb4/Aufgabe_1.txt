@@ -1,0 +1,32 @@
+a)
+// durchläuft alle if-then-else zweige
+suche ('c', ['a','b','c','d','e', 'f', 'g', 'h', 'i']);
+
+// durchläuft return -1
+suche ('x', ['a', 'b'])
+
+b)
+Ich bin der meinung das ist das gleiche wie a), weil es nur 
+if-then-else konstrukte gibt aber keine if-then's
+
+c)
+[zeichen, final char zeichen, if (alphabet[mitte] < zeichen)]
+[zeichen, final char zeichen, else if (alphabet[mitte] > zeichen)]
+[alphabet, final char[] alphabet, int letztes = alphabet.length - 1]
+[alphabet, final char[] alphabet, if (alphabet[mitte] < zeichen)]
+[alphabet, final char[] alphabet, else if (alphabet[mitte] > zeichen)]
+[erstes, int erstes = 0, while (erstes <= letztes)]
+[erstes, int erstes = 0, final int mitte = erstes + ((letztes - erstes) / 2)]
+[erstes, erstes = mitte + 1, while (erstes <= letztes)]
+[erstes, erstes = mitte + 1, final int mitte = erstes + ((letztes - erstes) / 2)]
+[letztes, int letztes = alphabet.length - 1, while (erstes <= letztes)]
+[letztes, int letztes = alphabet.length - 1, final int mitte = erstes + ((letztes - erstes) / 2)]
+[letztes, letztes = mitte - 1, while (erstes <= letztes)]
+[letztes, letztes = mitte - 1, final int mitte = erstes + ((letztes - erstes) / 2)]
+[mitte, final int mitte = erstes + ((letztes - erstes) / 2), if (alphabet[mitte] < zeichen)]
+[mitte, final int mitte = erstes + ((letztes - erstes) / 2), else if (alphabet[mitte] > zeichen)]
+[mitte, final int mitte = erstes + ((letztes - erstes) / 2), else if (alphabet[mitte] > zeichen)]
+[mitte, final int mitte = erstes + ((letztes - erstes) / 2), letztes = mitte - 1]
+[mitte, final int mitte = erstes + ((letztes - erstes) / 2), return mitte]
+
+d)
