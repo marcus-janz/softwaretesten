@@ -2,4 +2,13 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="exercise2.test.AddressBookViewMockUp"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="exercise4.addressbook.model.Entry"/>
+<fullyQualifiedTypeName name="exercise4.addressbook.model.PhoneNumber"/>
+<fullyQualifiedTypeName name="org.joda.time.DateTime"/>
+<fullyQualifiedTypeName name="exercise4.addressbook.model.Gender"/>
+<fullyQualifiedTypeName name="exercise4.addressbook.view.AddressBookFilter"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="exercise4.addressbook.model.EmailAddress"/>
 </qualifiedTypeNameHistroy>
