@@ -5,6 +5,7 @@ Bitte auf elektronischem Wege, also entweder per Grafikprogramm erstellen oder e
 b) Ermitteln Sie die zyklomatische Zahl der Methode
 c) Führen Sie eine Datenflussanalyse durch 
 Diese soll umfassend sein, d.h. sowohl alle unter a) identifizierten Pfade berücksichtigen, als auch alle Variablen
+
 Aufgabe 2)
 Führen Sie einen Code Review einer JUnit Testklasse durch. Verwenden Sie dabei Ihre selbstgeschriebene Klasse AddressBookControllerTest aus dem Komponententest für Übung 2. Halten Sie sich an die Richtlinien aus dem Dokument UnitTestingGuidelines.pdf, diskutieren Sie dabei anhand von konkreten Beispielen jede der zehn gegebenen Richtlinien im Rahmen einer kurzen, schriftlichen Stellungnahme.
 Erfüllt Ihr Code die Richtlinie oder verstößt er dagegen?
