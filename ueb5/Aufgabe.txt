@@ -1,0 +1,10 @@
+Aufgabe 1) Zustandsdiagramm
+Entwerfen Sie ein Zustandsdiagramm für einen Iterator. Überprüfen Sie dabei stets, ob Sie für jeden entworfenen Zustand feststellen können (durch Methodenaufrufe), ob sich der Iterator in diesem Zustand befindet oder nicht. Ein nicht überprüfbarer Zustand ist in diesem Kontext unnütz. Überlegen Sie für alle Zustandsübergänge, ob und welche Bedingungen dafür erfüllt sein müssen. Gehen Sie zu diesem Zweck davon aus, dass itemCount die Anzahl der Elemente im Container bezeichnet. Benötigen Sie weitere Variablen? Gehen Sie davon aus, dass ein Iterator jederzeit zerstört werden kann.
+Aufgabe 2) Übergangsbaum
+Leiten Sie aus Ihrem Zustandsdiagramm aus Aufgabe 1 den zugehörigen Übergangsbaum ab.
+Aufgabe 3) Tests zur Transitionsüberdeckung
+Leiten Sie logische Tests zur Transitionsüberdeckung bei Containern mit genau vier Elementen ab.
+Aufgabe 4) GUI-Test
+Verwenden Sie JUnit zur Überprüfung der korrekten Sortierreihenfolge beim Hinzufügen von Einträgen in das Adressbuch. Testen Sie dabei ausschließlich nach Black-Box Prinzipien und greifen Sie niemals direkt auf Klassen zu die in den sub-packages model, view und controller des package exercise5.addressbook definiert sind. Verwenden Sie das Abbot Framework zur Testdurchführung. Eine Test-Fixture für Abbot ist bereits vorgegeben
+Hinweis:
+Die aktuelle Version von Abbot (1.2.0) hat auf manchen Systemen (z.B. OS X 10.7) Schwierigkeiten die richtige "Keymap" zu erkennen. Als Folge davon werden einige Zeichen nicht richtig in die Textfelder eingetragen (z.B. Sonderzeichen, y und z vertauscht...). Bitte überprüfen Sie bei Ihren Testfällen, ob Abbot die richtigen Testdaten einträgt und wählen Sie ggfs. andere.
