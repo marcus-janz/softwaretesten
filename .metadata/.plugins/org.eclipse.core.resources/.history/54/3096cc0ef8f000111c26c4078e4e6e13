@@ -1,0 +1,20 @@
+package exercise4.test;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import exercise4.addressbook.model.Entry;
+import exercise4.addressbook.view.AddressBookFilter;
+
+public class Test {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Collection<Entry> entries=new ArrayList<Entry>();
+		AddressBookFilter filter=AddressBookFilter.FEMALE_DUCK_OR_MAUS_OVER_30;
+		
+	}
+
+}
