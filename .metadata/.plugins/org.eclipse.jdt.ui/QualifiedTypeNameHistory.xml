@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="exercise4.addressbook.view.AddressBookFilter"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="exercise4.addressbook.model.EmailAddress"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
 </qualifiedTypeNameHistroy>

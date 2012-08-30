@@ -76,7 +76,7 @@ public class TestSorting extends ComponentTestFixture {
 	 * @throws MultipleComponentsFoundException When there is an ambiguous resolution of GUI components 
 	 * @throws IOException In case the address book data file could not be read 
 	 */
-	@Test
+	/*@Test
 	public void testEdit() throws ComponentNotFoundException, MultipleComponentsFoundException, IOException {
 		
 	    // Load data into address book
@@ -112,7 +112,7 @@ public class TestSorting extends ComponentTestFixture {
 	    assertEquals("F", content.getValueAt(0, 2));
 	    assertEquals("999999", content.getValueAt(0, 3));
 	    assertEquals("1.1.1111", content.getValueAt(0, 4));
-	}
+	}*/
 	
 	/*
 	 * Aufgabe 4
@@ -128,5 +128,152 @@ public class TestSorting extends ComponentTestFixture {
 	 * Sie ggfs. andere.
 	 */
 	
+	/*
+	 * Äquivalenzklassen:
+	 * 	gültig:
+	 * 		- verschiedene Nachnamen 
+	 * 		- verschiedene Vornamen
+	 * 		- gleiche Nachnamen
+	 * 		- gleiche Vornamen
+	 * 		- Vornamen mit Umlauten
+	 * 		- Vornamen mit Großbuchstaben
+	 * 		- Vornamen ohne Großbuchstaben
+	 * 	  	- Nachnamen mit Umlauten
+	 * 		- Nachnamen mit Großbuchstaben
+	 * 		- Nachnamen ohne Großbuchstaben
+	 * 
+	 * 	ungültig:
+	 * 		- Nachnamen mit Zeichen, die keine Buchstaben sind
+	 * 		- Nachnamen null/leer
+	 * 	  	- Vornamen mit Zeichen, die keine Buchstaben sind
+	 * 		- Vornamen null/leer		 
+	 */
+	
+	@Test
+	public void testSortingOfBigVSLittleLetters() throws ComponentNotFoundException, MultipleComponentsFoundException{
+		TableModel content = ((JTable) getFinder().find(new NameMatcher("viewTable"))).getModel();
+		
+		// Zzz Zzz - Nachname mit Großbuchstaben Vorname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		
+		// Zza Zzz - gleicher Nachname verschiedener Vorname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yya");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"zza");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		assertEquals(content.getValueAt(1, 0),"Zzz");
+		assertEquals(content.getValueAt(1, 1),"Zzz");
+	}
+	
+	@Test
+	public void testSortingOfEqualLastDifferentFirst() throws ComponentNotFoundException, MultipleComponentsFoundException{
+		TableModel content = ((JTable) getFinder().find(new NameMatcher("viewTable"))).getModel();
+		
+		// Zzz Zzz - Nachname mit Großbuchstaben Vorname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		
+		// Azz Zzz - gleicher Nachname mit Großbuchstaben verschiedener Vorname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Ayy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Azz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		assertEquals(content.getValueAt(1, 0),"Zzz");
+		assertEquals(content.getValueAt(1, 1),"Zzz");
+
+	}
+	
+	@Test
+	public void testSortingOfDifferentLastEqualFirst() throws ComponentNotFoundException, MultipleComponentsFoundException{
+		TableModel content = ((JTable) getFinder().find(new NameMatcher("viewTable"))).getModel();
+		
+		// Zzz Zzz - Nachname mit Großbuchstaben Vorname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		
+		// Zzz Zza - gleicher Vorname mit Großbuchstaben verschiedener Nachname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yya");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zza");
+		assertEquals(content.getValueAt(1, 0),"Zzz");
+		assertEquals(content.getValueAt(1, 1),"Zzz");
+		
+	}
+	
+	@Test
+	public void testSortingOfEqualLastEqualFirst() throws ComponentNotFoundException, MultipleComponentsFoundException{
+		TableModel content = ((JTable) getFinder().find(new NameMatcher("viewTable"))).getModel();
+		
+		// Zzz Zzz - Nachname mit Großbuchstaben Vorname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		
+		
+		// Zzz Zzz - gleicher Vorname mit Großbuchstaben gleicher Nachname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		try{
+			content.getValueAt(1, 0);
+			fail();	
+		}catch(ArrayIndexOutOfBoundsException e){
+			//expected, OK
+		}
+	}
+	
+	@Test
+	public void testSortingOfEqualLastEqualFirstWithDifferentLtterSizes() throws ComponentNotFoundException, MultipleComponentsFoundException{
+		TableModel content = ((JTable) getFinder().find(new NameMatcher("viewTable"))).getModel();
+		
+		// Zzz Zzz - Nachname mit Großbuchstaben Vorname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		
+		
+		// Zzz Zzz - gleicher Vorname mit Großbuchstaben gleicher Nachname mit Großbuchstaben
+		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "yyy");
+		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
+		assertEquals(content.getValueAt(0, 0),"Zzz");
+		assertEquals(content.getValueAt(0, 1),"Zzz");
+		try{
+			content.getValueAt(1, 0);
+			fail("Should throw Exception.");	
+		}catch(ArrayIndexOutOfBoundsException e){
+			//expected, OK
+		}
+	}
 	
 }
