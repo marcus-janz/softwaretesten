@@ -1,0 +1,50 @@
+@setUp{
+	container = new List({1, 2, 3, 4});
+}
+
+
+@Test{
+	Iterator iter = container.iterator();
+	assertFalse(iter.isDone());
+	assertEquals(iter.next(), 1);
+	assertFalse(iter.isDone());
+	assertEquals(iter.next(), 2);
+	assertFalse(iter.isDone());
+	assertEquals(iter.next(), 3);
+	assertFalse(iter.isDone());
+	assertEquals(iter.next(), 4);
+	
+	assertTrue(iter.isDone());
+}
+
+
+@Test{
+	Iterator iter = container.iterator();
+	assertEquals(iter.next(), 1);
+	assertEquals(iter.next(), 2);
+	assertEquals(iter.next(), 3);
+	assertEquals(iter.next(), 4);
+	assertTrue(iter.isDone());
+	
+	assertTrue(iter.isDone()); // isDone() darüber darf Zustand nicht verändert haben
+	
+	try{
+		iter.next();			// next() muss fehlschlagen in undefined
+		fail();
+	}catch (IteratorInUndefinedException e){}
+	
+	iter.first();
+	assertFalse(iter.isDone());
+	assertEquals(iter.next(), 1); // Teste das Zurücksetzen des Iterators
+}
+
+@Test{
+	Iterator iter = container.iterator();
+	iter.first();
+	assertEquals(iter.next(), 1);
+	assertEquals(iter.next(), 2);
+	assertEquals(iter.next(), 3);
+	iter.first();
+	assertEquals(iter.next(), 1);	// Testen des Zurücksetzen in !undefined
+	
+}
