@@ -1,5 +1,6 @@
-1)
+1 a)
 	Character haben einen Wertebereich von 8-Bit. Theoretisch können also alle Wertevon 0-255 vorkommen.
+	Notation: (char) 97 == 'a' und (char[]){97,98,99} == {'a','b','c'}
 	
 	1.1) "reine" Grenzwertanalyse:
 		
@@ -27,6 +28,50 @@
 			suche((char) 255, null)
 			suche((char) 256, null)
 			
+			
 	1.2) Äquivalenzklassenbildung
 	
+			zeichen:
+				gültige Äquivalenzklassen:		alle Buchstaben bzw. alle Werte im Bereich 0-255
+				ungültige Äquivalenzklassen:	negative Zahlen, Werte größer gleich 256
+				
+			alphabet:
+				gültige Äquivalenzklassen:		alle Buchstaben bzw. alle Werte im Bereich 0-255 in einem Array
+				ungültige Äquivalenzklassen:	null, negative Zahlen, Werte größer gleich 256 in einem Array
+				
+				suche((char)   32, (char[]){0, 1, ..., 255}) 	// gültig x gültig
+				suche((char)   32, (char[]){-3, -2, -1}) 		// gültig x negativ
+				suche((char)   32, (char[]){256, 257, 285}) 	// gültig x zu groß
+				suche((char)   32, null) 						// gültig x null
+				
+				suche((char)   -1, (char[]){0, 1, ..., 255}) 	// negativ x gültig
+				suche((char)   -1, (char[]){-3, -2, -1}) 		// negativ x negativ
+				suche((char)   -1, (char[]){256, 257, 285}) 	// negativ x zu groß
+				suche((char)   -1, null) 						// negativ x null
+				
+				suche((char)   256, (char[]){0, 1, ..., 255}) 	// zu groß x gültig
+				suche((char)   256, (char[]){-3, -2, -1}) 		// zu groß x negativ
+				suche((char)   256, (char[]){256, 257, 285}) 	// zu groß x zu groß
+				suche((char)   256, null) 						// zu groß x null
+				
+		Auch könnte man den Wertebereich von char wie folgt teilen und auf diesen Grenzen testen.
+		
+			 0-31:	Steuerzeichen
+			32-47:	Sonderzeichen
+			48-57:	Zahlen
+			...
+		
+		Das ist jedoch eher unnötig, da der Computer Buchstaben eben als Zahlen behandelt und diese Grenzen eben nicht zieht.
+		
+		Eine weitere Äquivalenzklasse für alphabet könnte sein "unsortiertes Array", das das jedoch fehlschlagen wird ist ersichtlich.
+	
+	1.3) ?!
+	
+	
+1 b)
+	
+		Im Fall der du-Ketten stellte sich heraus, dass genau ein Testfall genügte, alle Ketten mindestens einmal abzulaufen.
+		Im obigen Beispiel sind ein Vielfaches der Fälle angegeben, welche getestet werden und trotzdem ist nicht garantiert, dass immer alle Pfade abgelaufen werden, da das System vorgibt, wie mit ungültigen Werten einer Variable verfahren wird. Theoretisch ist auch irrelevant, welche Pfade für ungültige Werte geprüft werden, da man diese Pfade in gültigen Eingaben prüfen will, nicht auf ungültigen Werten.
+		
+
 			

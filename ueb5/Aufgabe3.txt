@@ -33,9 +33,9 @@
 		fail();
 	}catch (IteratorInUndefinedException e){}
 	
-	iter.first();
+	iter.first();				 // Teste das Zurücksetzen des Iterators
 	assertFalse(iter.isDone());
-	assertEquals(iter.next(), 1); // Teste das Zurücksetzen des Iterators
+	assertEquals(iter.next(), 1);
 }
 
 @Test{
