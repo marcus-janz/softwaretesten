@@ -1,0 +1,32 @@
+1)
+	Character haben einen Wertebereich von 8-Bit. Theoretisch können also alle Wertevon 0-255 vorkommen.
+	
+	1.1) "reine" Grenzwertanalyse:
+		
+			suche((char)  -1, (char[]){0, 1, ..., 255})
+			suche((char)   0, (char[]){0, 1, ..., 255})
+			suche((char)   1, (char[]){0, 1, ..., 255})
+			suche((char) 254, (char[]){0, 1, ..., 255})
+			suche((char) 255, (char[]){0, 1, ..., 255})
+			suche((char) 256, (char[]){0, 1, ..., 255})
+			
+			suche((char)  -1, (char[]){-1, 0, 1, ..., 255, 256})
+			suche((char)   0, (char[]){-1, 0, 1, ..., 255, 256})
+			suche((char) 255, (char[]){-1, 0, 1, ..., 255, 256})
+			suche((char) 256, (char[]){-1, 0, 1, ..., 255, 256})
+			
+			suche((char)  -1, (char[]){})
+			suche((char)   0, (char[]){})
+			suche((char)   1, (char[]){})
+			suche((char) 254, (char[]){})
+			suche((char) 255, (char[]){})
+			suche((char) 256, (char[]){})
+			
+			suche((char)  -1, null)
+			suche((char)   0, null)
+			suche((char) 255, null)
+			suche((char) 256, null)
+			
+	1.2) Äquivalenzklassenbildung
+	
+			
