@@ -29,7 +29,7 @@
 			suche((char) 256, null)
 			
 			
-	1.2) Äquivalenzklassenbildung
+	1.2) Äquivalenzklassenbildung analog zur Vorlesung
 	
 			zeichen:
 				gültige Äquivalenzklassen:		alle Buchstaben bzw. alle Werte im Bereich 0-255
@@ -65,8 +65,25 @@
 		
 		Eine weitere Äquivalenzklasse für alphabet könnte sein "unsortiertes Array", das das jedoch fehlschlagen wird ist ersichtlich.
 	
-	1.3) ?!
+	1.3) Nach unserem Verständnis von Äquivalenzklassen würden die geforderten Fälle schon in 1.1 abgedeckt. Daher verwenden wir für diese Aufgabe den Alternativvorschlag aus 1.2, d.h. andere Äquivalenzklassen und testen auf den sich neu ergebenden Grenzen:
 	
+	 
+		suche((char)   0, (char[]){0, 1, ..., 31}) 
+		suche((char)   0, (char[]){1, ..., 31}) 
+		suche((char)   31, (char[]){0, 1, ..., 30}) 
+		suche((char)   31, (char[]){0, 1, ..., 31}) 
+		suche((char)   31, (char[]){0, 1, ..., 32}) 
+		
+		suche((char)   32, (char[]){0, 1, ..., 31}) 
+		suche((char)   32, (char[]){0, 1, ..., 32})
+		suche((char)   32, (char[]){0, 1, ..., 33})
+		suche((char)   32, (char[]){31, ..., 255}) 
+		suche((char)   32, (char[]){32, ..., 255})
+		suche((char)   32, (char[]){33, ..., 255})
+		...
+		
+		
+		
 	
 1 b)
 	
