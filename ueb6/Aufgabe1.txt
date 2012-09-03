@@ -69,10 +69,14 @@
 	
 	 
 		suche((char)   0, (char[]){0, 1, ..., 31}) 
-		suche((char)   0, (char[]){1, ..., 31}) 
+		suche((char)   0, (char[]){1, ..., 31})
+		
 		suche((char)   31, (char[]){0, 1, ..., 30}) 
 		suche((char)   31, (char[]){0, 1, ..., 31}) 
 		suche((char)   31, (char[]){0, 1, ..., 32}) 
+		suche((char)   31, (char[]){30, ..., 255}) 
+		suche((char)   31, (char[]){31, ..., 255})
+		suche((char)   31, (char[]){32, ..., 255})
 		
 		suche((char)   32, (char[]){0, 1, ..., 31}) 
 		suche((char)   32, (char[]){0, 1, ..., 32})
@@ -80,15 +84,14 @@
 		suche((char)   32, (char[]){31, ..., 255}) 
 		suche((char)   32, (char[]){32, ..., 255})
 		suche((char)   32, (char[]){33, ..., 255})
-		...
+		
+		... weitere Fälle analog.
 		
 		
-		
-	
 1 b)
 	
 		Im Fall der du-Ketten stellte sich heraus, dass genau ein Testfall genügte, alle Ketten mindestens einmal abzulaufen.
-		Im obigen Beispiel sind ein Vielfaches der Fälle angegeben, welche getestet werden und trotzdem ist nicht garantiert, dass immer alle Pfade abgelaufen werden, da das System vorgibt, wie mit ungültigen Werten einer Variable verfahren wird. Theoretisch ist auch irrelevant, welche Pfade für ungültige Werte geprüft werden, da man diese Pfade in gültigen Eingaben prüfen will, nicht auf ungültigen Werten.
+		Im obigen Beispiel sind ein Vielfaches der Fälle angegeben, welche getestet werden und trotzdem ist nicht garantiert, dass immer alle Pfade abgelaufen werden, da das System vorgibt, wie mit ungültigen Werten einer Variable verfahren wird. Theoretisch ist auch irrelevant, welche Pfade für ungültige Werte geprüft werden, da man diese Pfade in gültigen Eingaben prüfen will, nicht vorangig auf ungültigen Werten. Hätte ich zu wählen, was ich teste würde ich die du-Ketten bevorzugen im Fall der Funktion "suche".
 		
 
 			
