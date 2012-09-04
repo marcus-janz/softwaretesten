@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*
+ *  (C) Copyright Testing Technologies, 2001-2007.  All Rights Reserved.
+ *
+ *  All copies of this program, whether in whole or in part, and whether
+ *  modified or not, must display this and all other embedded copyright
+ *  and ownership notices in full.
+ *
+ *  See the file COPYRIGHT for details of redistribution and use.
+ *
+ *  You should have received a copy of the COPYRIGHT file along with
+ *  this file; if not, write to the Testing Technologies,
+ *  Michaelkirchstr. 17/18, 10179 Berlin, Germany.
+ *
+ *  TESTING TECHNOLOGIES DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ *  SOFTWARE. IN NO EVENT SHALL TESTING TECHNOLOGIES BE LIABLE FOR ANY
+ *  SPECIAL, DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ *  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+ *  AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ *  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+ *  THIS SOFTWARE.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+ *  EITHER EXPRESSED OR IMPLIED, INCLUDING ANY KIND OF IMPLIED OR
+ *  EXPRESSED WARRANTY OF NON-INFRINGEMENT OR THE IMPLIED WARRANTIES
+ *  OF MECHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ */
+-->
+
+<project name="Exercise4" default="all">
+
+    <!-- adapt to your environment -->
+    <target name="init">
+
+        <tstamp/>
+
+        <!-- Java source folder -->
+        <property name="src" location="javasrc"/>
+
+        <!-- libraries folder -->
+        <property name="lib" value="lib"/>
+    	<mkdir dir="${lib}"/>
+
+    	<!-- temporary folder for build artifacts -->
+        <property name="build" location="antbuild"/>
+    	
+        <!-- temporary folder for compiled classes -->
+        <property name="classes" location="${build}/classes"/>
+    	<mkdir dir="${classes}"/>
+    	
+    	<!-- test adapter file to be created -->
+    	<property name="TA" location="${lib}/TA.jar"/>
+    	
+        <!-- TTCN-3 source folder, should exist -->
+        <property name="ttcn3" location="ttcn3"/>
+
+    </target>
+
+	<target name="all" depends="init, classes, TA.jar"/>	 
+
+    <!-- Compile classes -->
+    <target name="classes" depends="init">
+        <echo>Compile ${ant.project.name} Test Adapter and Codec</echo>
+	    <javac srcdir="${src}" destdir="${classes}">
+            <classpath>
+                <pathelement location="${ttthree.aux}/lib/TTthreeRuntime.jar"/>
+            	<pathelement location="${ttthree.aux}/lib/TTorg.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Make TA.jar --> 
+    <target name="TA.jar" depends="init,classes">
+        <echo>Create Test Adapter jar file</echo>
+        <jar jarfile="${TA}" basedir="${classes}" includes="**/*.class">
+        </jar>
+    </target>
+    
+    <!-- Remove created classes and test adapter file -->
+    <target name="clean" depends="init">
+        <delete file="${TA}"/>
+        <delete dir="${build}"/>
+    </target>
+  
+</project>

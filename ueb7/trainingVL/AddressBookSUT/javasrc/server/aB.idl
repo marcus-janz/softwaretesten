@@ -1,0 +1,41 @@
+module aB {
+
+  const long nameLength = 20;
+  const long emailLength = 40;
+  const long digitAmount = 10;
+
+  typedef string FirstName;
+  typedef string SurName;
+
+  enum Gender { e_male, e_female };
+
+  typedef long Digit; // should be 0..9
+  typedef sequence<Digit,digitAmount> PhoneNumber;  
+
+  typedef string EmailAddress;
+
+  enum ContactType { e_phoneNumber, e_email };
+  union Contact switch(ContactType) {
+    case e_phoneNumber: PhoneNumber number;
+    case e_email: EmailAddress email;
+  };
+
+  struct Entry {
+    SurName   surName;
+    FirstName firstName;
+    Gender    gender;
+    Contact   contact;
+  };
+
+  interface addressBook {
+
+    exception notFound {};
+    exception sizeLimitReached {};
+    exception userExists { FirstName firstName; };
+    
+    void addEntry ( in Entry p_entry ) raises ( userExists, sizeLimitReached );
+    Contact getEntry ( in SurName surName ) raises ( notFound );
+    void clear ();
+
+  };
+};

@@ -1,0 +1,18 @@
+#Tue Sep 04 09:50:15 CEST 2012
+internal.compiler.vm.arguments=
+Parameters_View.viewerSettings=<?xml version\="1.0" encoding\="UTF-8"?>\n<Parameters_View.viewerSettings Default.columnIndex\="2" Default.columnSize\="100" Default.useReverseOrder\="0" Description.columnIndex\="3" Description.columnSize\="100" Description.useReverseOrder\="0" Parameter.columnIndex\="0" Parameter.columnSize\="300" Parameter.useReverseOrder\="0" Value.columnIndex\="1" Value.columnSize\="100" Value.useReverseOrder\="0"/>
+Meta_Campaign_View.viewerSettings=<?xml version\="1.0" encoding\="UTF-8"?>\n<Meta_Campaign_View.viewerSettings Runs.columnIndex\="1" Runs.columnSize\="100" Runs.useReverseOrder\="0" Test_Campaign.columnIndex\="0" Test_Campaign.columnSize\="400" Test_Campaign.useReverseOrder\="0"/>
+Meta_Campaign.viewerSettings=<?xml version\="1.0" encoding\="UTF-8"?>\n<Meta_Campaign.viewerSettings Runs.columnIndex\="1" Runs.columnSize\="100" Runs.useReverseOrder\="0" Test_Campaign.columnIndex\="0" Test_Campaign.columnSize\="400" Test_Campaign.useReverseOrder\="0"/>
+welcome-shown=com.testingtech.ttworkbench.prof_1.1.14.201204051147R
+keep_migrated_project_properties=true
+Parameters.viewerSettings=<?xml version\="1.0" encoding\="UTF-8"?>\n<Parameters.viewerSettings Default.columnIndex\="2" Default.columnSize\="100" Default.useReverseOrder\="0" Description.columnIndex\="3" Description.columnSize\="100" Description.useReverseOrder\="0" Name.columnIndex\="0" Name.columnSize\="300" Name.useReverseOrder\="0" Value.columnIndex\="1" Value.columnSize\="100" Value.useReverseOrder\="0"/>
+java-compiler=1
+notify-maint-contract-expire=always
+debug_mode=false
+keep-java=false
+ttcn3-version=7
+standard-compliance=warning
+eclipse.preferences.version=1
+reporting=2
+javac-command=javac
+activate-on-write=false

@@ -1,0 +1,275 @@
+/**
+* @desc Automatically generated behavior for type module aB 
+* Warning: File was generated automatically and will be overwritten by the next generation process. 
+* Date: Tue Sep 04 09:28:10 CEST 2012 
+ * @see aB
+ */
+module aB_Teststeps {
+  import from aB language "TTCN-3:2010" all;
+  import from aB_Config all;
+  
+  function send_Gender(aB.Gender msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_Gender(template aB.Gender msg, out aB.Gender receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_Gender(template aB.Gender msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.Gender receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_Gender(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_PhoneNumber(aB.PhoneNumber msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_PhoneNumber(template aB.PhoneNumber msg, out aB.PhoneNumber receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_PhoneNumber(template aB.PhoneNumber msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.PhoneNumber receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_PhoneNumber(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_Contact(aB.Contact msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_Contact(template aB.Contact msg, out aB.Contact receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_Contact(template aB.Contact msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.Contact receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_Contact(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_Entry(aB.Entry msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_Entry(template aB.Entry msg, out aB.Entry receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_Entry(template aB.Entry msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.Entry receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_Entry(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_addEntry(aB.addEntry msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_addEntry(template aB.addEntry msg, out aB.addEntry receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_addEntry(template aB.addEntry msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.addEntry receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_addEntry(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_getEntry(aB.getEntry msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_getEntry(template aB.getEntry msg, out aB.getEntry receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_getEntry(template aB.getEntry msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.getEntry receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_getEntry(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_getEntryReply(aB.getEntryReply msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_getEntryReply(template aB.getEntryReply msg, out aB.getEntryReply receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_getEntryReply(template aB.getEntryReply msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.getEntryReply receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_getEntryReply(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_clear_(aB.clear_ msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_clear_(template aB.clear_ msg, out aB.clear_ receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_clear_(template aB.clear_ msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.clear_ receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_clear_(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_userExists(aB.userExists msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_userExists(template aB.userExists msg, out aB.userExists receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_userExists(template aB.userExists msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.userExists receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_userExists(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_sizeLimitReached(aB.sizeLimitReached msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_sizeLimitReached(template aB.sizeLimitReached msg, out aB.sizeLimitReached receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_sizeLimitReached(template aB.sizeLimitReached msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.sizeLimitReached receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_sizeLimitReached(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+  function send_notFound(aB.notFound msg) runs on aB_Config.Component {
+    PORT_aB.send(msg);
+  }
+  
+  altstep alt_notFound(template aB.notFound msg, out aB.notFound receivedVal) runs on aB_Config.Component {
+    [] PORT_aB.receive(msg) -> value receivedVal {
+      setverdict(pass);
+    }
+  }
+  
+  function receive_notFound(template aB.notFound msg, float guardTimeout := DEFAULT_TIMEOUT) runs on aB_Config.Component {
+    var aB.notFound receivedVal;
+    timer guard := guardTimeout;
+    var default behavior := activate(defaultBehavior(guard));
+    guard.start;
+    alt {
+      [] alt_notFound(msg, receivedVal) {
+        setverdict(pass);
+      }
+    }
+    guard.stop;
+    deactivate(behavior);
+  }
+  
+}

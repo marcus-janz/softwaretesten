@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*
+ *  (C) Copyright Testing Technologies, 2004.  All Rights Reserved.
+ *
+ *  All copies of this program, whether in whole or in part, and whether
+ *  modified or not, must display this and all other embedded copyright
+ *  and ownership notices in full.
+ *
+ *  See the file COPYRIGHT and LICENSE for details of redistribution
+ *  and use.
+ *
+ *  You should have received a copy of the COPYRIGHT and LICENSE file
+ *  along with this file; if not, write to the Testing Technologies,
+ *  Oranienburger Str. 65, 10117 Berlin, Germany.
+ *
+ *
+ *  AUTHOR:      Dimitrios Apostolidis
+ *  DATE:        September, 2004
+ *
+ *  REVISION INFO:
+ *	$Revision: 1.1 $ $Date: 2009/12/08 16:09:10 $
+ *	$Source: /usr/local/cvs_root/Consulting/Tutorial/AddressBookSUT/build.xml,v $
+ *
+ */
+-->
+<project name="AddressBookSUT" default="all" basedir=".">
+
+    <!-- Create some properties -->
+    <target name="init">
+        <!-- Set which compiler to be used -->
+        <property name="build.compiler" value="modern"/>
+
+        <!-- Set the AddressBook source folder -->
+        <property name="src" value="${basedir}/javasrc"/>
+        <property name="gensrc" value="${basedir}/gensrc"/>
+
+        <!-- Set the AddressBook lib folder -->
+        <property name="lib" value="${basedir}/lib"/>
+
+        <!-- Set the AddressBook folder for the compiled classes -->
+        <property name="classes" value="${lib}"/>
+
+        <!-- Set the AddressBook folder for the javadoc files -->
+        <property name="javadoc" value="${basedir}/doc"/>
+
+        <!-- Set the AddressBook folder for etc -->
+        <property name="etc" value="${basedir}/etc"/>
+
+        <!-- Set the AddressBook global properties file -->
+        <property file="${etc}/global.properties"/>
+    	
+        <!-- Set the AddressBook ats folder -->
+        <property name="ats" value="${basedir}/ats"/>
+    	
+    	<property name="TTthree" value="${ttthree.home}" /> 
+		<property name="build.compiler" value="modern" />    	
+    </target>
+
+	
+    <!-- Make all -->
+	<target name="all" depends="init,classes,
+			AddressBookTAMessageBased.jar,
+			AddressBookTAProcedureBased.jar,
+			MessageBasedSUT.jar, 
+			ProcedureBasedSUT.jar" />
+             
+    <!-- Compile classes -->
+	<!-- we are compiling here all classes -->
+    <target name="classes" depends="init">
+	    <javac destdir="${classes}" debug="on" source="1.5" target="1.5">
+	    	<src path="${gensrc};${src}"/>	    	
+            <classpath>
+            	<pathelement location="${ttwb.core}/lib/TTtools.jar"/>
+            	<pathelement location="${ttthree.aux}/lib/TTorg.jar"/>
+                <pathelement location="${ttthree.aux}/lib/TTthreeRuntime.jar"/>
+            	<pathelement location="${lib}/TabularCodec.jar"/> 	
+            </classpath>
+        </javac>
+    </target>
+
+
+	<!-- Create the Message Based SUT-->
+    <target name="MessageBasedSUT.jar" depends="classes">
+        <echo>Create MessageBasedSUT.jar</echo>
+        <jar jarfile="${lib}/MessageBasedSUT.jar" basedir="${classes}" 
+		includes="**/*.class">
+            <manifest>
+            	<attribute name="Main-Class" value="server.MessageBasedSUT"/>
+                <attribute name="Class-Path" value="TTtools.jar TabularCodec.jar TTthreeRuntime.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+	<!-- Create the Procedure Based SUT-->
+    <target name="ProcedureBasedSUT.jar" depends="classes">
+        <echo>Create ProcedureBasedSUT.jar</echo>
+        <jar jarfile="${lib}/ProcedureBasedSUT.jar" basedir="${classes}" 
+		includes="**/*.class">
+            <manifest>
+            	<attribute name="Main-Class" value="server.AddressBookServer"/>
+                <attribute name="Class-Path" value="TTtools.jar TabularCodec.jar TTthreeRuntime.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+	<!-- Create the Asynchronous TestAdapter -->
+    <target name="AddressBookTAMessageBased.jar" depends="classes">
+        <echo>Create AddressBookTAMessageBased.jar</echo>
+        <jar jarfile="${lib}/AddressBookTAMessageBased.jar" basedir="${classes}" 
+		includes="**/*.class">
+            <manifest>
+                <attribute name="Class-Path" value="TTtools.jar TabularCodec.jar TTthreeRuntime.jar TTorg.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+	
+	<!-- Create the Synchronous TestAdapter -->
+    <target name="AddressBookTAProcedureBased.jar" depends="classes">
+        <echo>Create AddressBookTAProcedureBased.jar</echo>
+        <jar jarfile="${lib}/AddressBookTAProcedureBased.jar" basedir="${classes}" 
+		includes="**/*.class">
+            <manifest>
+                <attribute name="Class-Path" value="TTtools.jar TabularCodec.jar TTthreeRuntime.jar TTorg.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- Remove all generated and compiled classes -->
+    <target name="clean" depends="init">
+        <delete dir="${classes}/aB"/>
+        <delete dir="${classes}/com"/>
+	    <delete dir="${classes}/server"/>
+    </target>
+
+    <!-- Remove created jars -->
+    <target name="cleanjars" depends="init">
+        <delete file="${lib}/AddressBookTAMessageBased.jar"/>
+        <delete file="${lib}/AddressBookTAProcedureBased.jar"/>
+        <delete file="${lib}/MessageBasedSUT.jar"/>
+        <delete file="${lib}/ProcedureBasedSUT.jar"/>
+    </target>
+
+    <!-- Remove all -->
+    <target name="distclean" depends="init,clean,cleanjars"/>
+
+</project>

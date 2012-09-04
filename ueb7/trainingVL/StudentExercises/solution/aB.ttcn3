@@ -1,0 +1,151 @@
+/*
+ * Sample Solutions
+ * Exercise: 1
+*/
+module aB {
+	// some constants
+	const integer emailLength := 40 ;
+	const integer nameLength := 20 ;
+	const integer digitAmount := 15 ;
+	
+	
+	// Some forms of subtyping
+	/**
+	 * @desc
+	 *     Defines the type for a first name. Name size be can be 0..nameLength
+	 */
+	type charstring FirstName length (0 .. nameLength);
+	
+    /**
+	 * @desc
+	 *     Defines the type for a sur name. Name size be can be 0..nameLength
+	 */
+	type charstring SurName length (0 .. nameLength);
+	
+	/**
+	 * @desc Defines the type for digits used for a phone number  
+	 */
+	type integer Digit(0 .. 9);
+	
+    /**
+	 * @desc
+	 *     Defines the type for an email address. Email size be can be
+	 *     0..emailLength
+	 */
+	type charstring EmailAddress length (0 .. emailLength);
+
+	/**
+	 * @desc Defines the Gender type which is an enumeration with two elements
+	 * @member e_male
+	 * @member e_female
+	 */
+	type enumerated Gender {
+		e_male (1) ,
+		e_female (7)
+	}
+
+	/**
+	 * @desc
+	 *     Defines the type for a phone number. Only <code>Digit</code> are
+	 *     allowed and have to be ordered.
+	 */
+	type record length (1..digitAmount) of Digit PhoneNumber ;
+
+	// Union of two elements
+	/**
+	 * @desc Union of two elements defining the contact details
+	 * @member number
+	 * @member email
+	 */
+	type union Contact {
+		PhoneNumber number,
+		EmailAddress email
+	}
+
+	/**
+	 * @desc An ordered structure containing the details of an database entry
+	 * @member surName
+	 * @member firstName
+	 * @member gender
+	 * @member contact
+	 */
+	type record Entry {
+		SurName surName,
+		FirstName firstName,
+		Gender gender,
+		Contact contact
+	}
+
+	// Messages describing the communication
+	/**
+	 * @desc
+	 *     Group containing all Protocol Data Units (PDUs) used for the
+	 *     communication with the system Under Test
+	 */
+	group PDUs {
+	    /**
+	     * @desc PDU to add an entry
+	     * @member entry
+	     */
+	    
+    	type record addEntry { 
+    		Entry entry 
+    	}
+    	
+    	/**
+    	 * @desc PDU to get an entry distinguished by the surName
+    	 * @member surName
+    	 */
+    	type record getEntry { 
+    		SurName surName
+    	}
+    	
+    	/**
+		 * @desc
+		 *     PDU containing the requested contact. It is sent by the SUT in
+		 *     reply to a getEntry
+		 * @member contact
+		 */
+    	type record getEntryReply { 
+    		Contact contact 
+    	}
+    
+    	/**
+		 * @desc PDU used to clear the database of the SUT
+		 */
+    	type record clear_ { };
+    	
+    	/**
+		 * @desc
+		 *     PDU used by the SUT describing that the User already exists in
+		 *     the database.
+		 * @member firstName
+		 */
+    	type record userExists {
+    		FirstName firstName
+    	}
+    
+    	
+    	/**
+		 * @desc
+		 *     PDU sent by the SUT describing that the size limit of the
+		 *     database has been reached. No other entries can be added.
+		 * @member size
+		 */
+    	type record sizeLimitReached {
+    	    integer size
+    	 }
+    	
+    	/**
+		 * @desc
+		 *     PDU sent by the SUT describing that the requested Entry could not
+		 *     be found.
+		 * @member surName
+		 */
+    	type record notFound {
+    	    SurName surName 
+    	}
+    	
+	} //end group PDUs 
+
+}

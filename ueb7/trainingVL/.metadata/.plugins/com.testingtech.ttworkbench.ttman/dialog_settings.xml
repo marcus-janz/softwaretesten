@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.testingtech.ttworkbench.ttman.views.GraphicalLoggingView">
+	</section>
+	<section name="com.testingtech.ttworkbench.ttman.views.TextualLoggingView">
+		<section name="filter">
+			<item value="true" key="enabled"/>
+			<item value="tliAction:tliCCreate:tliCKill:tliCStart:tliCStop:tliCTerminated:tliCtrlStart:tliCtrlStop:tliCtrlTerminated:tliGetVerdict:tliLog:tliMatch:tliMatchMismatch:tliMDetected_c:tliMDetected_m:tliMMismatch_c:tliMMismatch_m:tliMReceive_c:tliMReceive_m:tliMSend_c:tliMSend_c_BC:tliMSend_c_MC:tliMSend_m:tliMSend_m_BC:tliMSend_m_MC:tliPConnect:tliPDisconnect:tliPMap:tliPrCall_c:tliPrCall_c_BC:tliPrCall_c_MC:tliPrCall_m:tliPrCall_m_BC:tliPrCall_m_MC:tliPrCatch_c:tliPrCatch_m:tliPrCatchDetected_c:tliPrCatchDetected_m:tliPrCatchMismatch_c:tliPrCatchMismatch_m:tliPrGetCall_c:tliPrGetCall_m:tliPrGetCallDetected_c:tliPrGetCallDetected_m:tliPrGetCallMismatch_c:tliPrGetCallMismatch_m:tliPrGetReply_c:tliPrGetReply_m:tliPrGetReplyDetected_c:tliPrGetReplyDetected_m:tliPrGetReplyMismatch_c:tliPrGetReplyMismatch_m:tliPrRaise_c:tliPrRaise_c_BC:tliPrRaise_c_MC:tliPrRaise_m:tliPrRaise_m_BC:tliPrRaise_m_MC:tliPrReply_c:tliPrReply_c_BC:tliPrReply_c_MC:tliPrReply_m:tliPrReply_m_BC:tliPrReply_m_MC:tliPUnmap:tliRT_WARN:tliRT_ERROR:tliSetVerdict:tliTcExecute:tliTcStart:tliTcStarted:tliTcStop:tliTcTerminated:tliTStart:tliTStop:tliTTimeoutDetected:" key="selectedType"/>
+		</section>
+	</section>
+</section>
