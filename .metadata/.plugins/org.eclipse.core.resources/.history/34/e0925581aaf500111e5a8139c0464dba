@@ -128,20 +128,20 @@ public class TestSorting extends ComponentTestFixture {
 		
 		// Zzz Zzz - Nachname mit Großbuchstaben Vorname mit Großbuchstaben
 		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
-		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Ayy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
 		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Yyy");
 		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
-		assertEquals("Azz",content.getValueAt(0, 0));
+		assertEquals("Zzz",content.getValueAt(0, 0));
 		assertEquals("Zzz",content.getValueAt(0, 1));
 		
 		// Azz Zzz - verschiedener Nachname mit Großbuchstaben verschiedener Vorname mit Großbuchstaben
 		buttonTester.actionClick(getFinder().find(new NameMatcher("addButton")));
-		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Yyy");
+		textTester.actionEnterText(getFinder().find(new NameMatcher("firstNameTextfield")), "Ayy");
 		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Ayy");
 		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
-		assertEquals("Zzz",content.getValueAt(0, 0));
+		assertEquals("Azz",content.getValueAt(0, 0));
 		assertEquals("Azz",content.getValueAt(0, 1));
-		assertEquals("Azz",content.getValueAt(1, 0));
+		assertEquals("Zzz",content.getValueAt(1, 0));
 		assertEquals("Zzz",content.getValueAt(1, 1));
 
 	}
@@ -223,7 +223,7 @@ public class TestSorting extends ComponentTestFixture {
 	}
 	
 	@Test
-	public void testSortingOfEqualLastEqualFirstWithDifferentLetterSizes() throws ComponentNotFoundException, MultipleComponentsFoundException{
+	public void testSortingOfEqualLastEqualFirstWithDifferentLtterSizes() throws ComponentNotFoundException, MultipleComponentsFoundException{
 		TableModel content = ((JTable) getFinder().find(new NameMatcher("viewTable"))).getModel();
 		
 		// Zzz Zzz - Nachname mit Großbuchstaben Vorname mit Großbuchstaben
@@ -373,7 +373,7 @@ public class TestSorting extends ComponentTestFixture {
 		textTester.actionEnterText(getFinder().find(new NameMatcher("lastNameTextfield")), "Aeaeae");
 		buttonTester.actionClick(getFinder().find(new NameMatcher("okButton")));
 		assertEquals("Zzz",content.getValueAt(0, 0));
-		assertEquals("Aeaeae",content.getValueAt(0, 1));
+		assertEquals("Zzz",content.getValueAt(0, 1));
 		
 		
 		// Äää Aaa - Vorname mit Umlaut  Nachname ohne Umlaut
