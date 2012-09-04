@@ -4,13 +4,13 @@ Der Möglichkeiten zur Testspezifikation
 JUnit ist nicht dafür ausgelegt Tests zu spezifizieren, sondern ist nur eine Testinfrastruktur.
 TTCN3 ist eine Testspezifikations- und Testimplementierungstechnologie. Es bietet somit die Möglichkeit Tests zu spezifizieren.
 
-Unterstützter Technologien des Testobjekts
-JUnit ist ein speziell für Java entwickeltes Testtool und kann somit auch nur Javatestobjekte testen.
-Demgegenüber ist TTCN3 Plattform unabhängig.
+Unterstützte Technologien des Testobjekts
+JUnit ist ein speziell für Java entwickeltes Testtool und kann somit auch nur Javaobjekte testen.
+Dem gegenüber ist TTCN3 plattformunabhängig.
 
 Verteilungsmöglichkeiten der Tests
-JUnit bietet von sich aus keine Unterstützung verreit zu testen.
-Mit TTCN3 lässt sich verteilt testen.
+JUnit bietet von sich aus keine Unterstützung um verteilt zu testen.
+Mit TTCN3 lässt sich hingegen verteilt testen.
 
 Auf welchen Teststufen werden diese Testtechnologien jeweils genutzt?
 JUnit ist zum Unit-Testen gedacht und kommt somit in Komponenten- und Integrationstests zum Einsatz.
