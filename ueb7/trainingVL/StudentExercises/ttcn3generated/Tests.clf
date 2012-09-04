@@ -1,50 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE campaignloader PUBLIC "-//TESTING TECH//DTD MLF//1.8" "mlf.dtd">
-<campaignloader>
-  <campaign Name="Tests" Control="false">
-    <testadapter Name="com.testingtech.examples.tutorial.message.AddressBookTA" File="lib/AddressBookTAMessageBased.jar">
-      <description></description>
-    </testadapter>
-    <module Name="aBConfig" File="solution/aBConfig.jar" Package="generated_ttcn"/>
-    <module Name="aBBehavior" File="solution/aBBehavior.jar" Package="generated_ttcn"/>
-    <parameter Name="DEFAULT_TIMER" Module="aBConfig">
-      <description>The value used for a timer.</description>
-      <type>float</type>
-      <value><![CDATA[<Values:float type="float" xmlns:Values="Values.xsd"><Values:value>2.0</Values:value></Values:float>]]></value>
-      <default><![CDATA[<Values:float type="float" xmlns:Values="Values.xsd"><Values:value>2.0</Values:value></Values:float>]]></default>
-      <presentation>
-        <plain/>
-      </presentation>
-    </parameter>
-    <testcase Name="testCases" Module="aBBehavior" Retries="0" Runs="0" ActionOnFail="continue" Selection="true" Status="stopped" Verdict="fail">
-      <description></description>
-      <testcase Name="TC_addEntry_withTimer" Module="aBBehavior" Retries="0" Runs="1" ActionOnFail="continue" Selection="false" Status="stopped" Verdict="fail">
-        <description>This test case should check that addEntry works as expected. 
-     This means that no response shall be received within a given period of time     A timer shall be used to check this.     The verdict should be pass.</description>
-      </testcase>
-      <testcase Name="TC_addEntry_UserExists" Module="aBBehavior" Retries="0" Runs="1" ActionOnFail="continue" Selection="false" Status="stopped" Verdict="fail">
-        <description>This test case checks if the System Under Test reports correctly     that a user already exists in the database.
-     For this you should 
-     	- first insert a message and then
-      - reinsert the same message and catch the response.
-      Guard all operations with timers     The verdict should be pass.</description>
-      </testcase>
-      <testcase Name="TC_addEntry_sizeLimitReached" Module="aBBehavior" Retries="0" Runs="1" ActionOnFail="continue" Selection="false" Status="stopped" Verdict="fail">
-        <description>This testcase shall find the maximum size of the addressBook.
- The way to test is could be to insert fresh entrys in a loop and to catch the sizeLimitReached message.
- We assume that the maximum size is below 10. The verdict should be pass.</description>
-      </testcase>
-      <testcase Name="TC_getEntry_valid_Email" Module="aBBehavior" Retries="0" Runs="1" ActionOnFail="continue" Selection="false" Status="stopped" Verdict="fail">
-        <description>This test case tries to receive the contact information of a     database entry. The verdict should be pass.
-     
-     1. First we insert the a valid addressbook entry and then
-     2. We search for this entry and compare the email.</description>
-      </testcase>
-      <testcase Name="TC_getEntry_valid_phoneNumber" Module="aBBehavior" Retries="0" Runs="1" ActionOnFail="continue" Selection="false" Status="stopped" Verdict="fail">
-        <description>This test cases tests that if the contact field is has a phonenumber
- 	the phone number has the correct value stored. 
-   The verdict should be pass in case the stored phone number is the correct one.</description>
-      </testcase>
-    </testcase>
-  </campaign>
-</campaignloader>
